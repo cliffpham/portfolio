@@ -18,7 +18,7 @@ export default class ProjectCarousel extends React.Component {
         totalSlides={3}
         >
        <ButtonNext style={{position: 'fixed', top: 350, right: '6%', borderWidth: 0, backgroundColor: '#FFF', outline: 'none'}}> <img style={{width: '50px', height: '50px'}}src={require('../images/arrowRight.png')} alt="Next"/> </ButtonNext>
-       <ButtonBack style={{position: 'fixed', top: 350, left: '6%', borderWidth: 0, backgroundColor: 'FFF', outline: 'none'}}> <img style={{width: '50px', height: '50px'}}src={require('../images/arrowLeft.png')} alt="Back"/> </ButtonBack>
+       <ButtonBack style={{position: 'fixed', top: 350, left: '6%', borderWidth: 0, backgroundColor: '#FFF', outline: 'none'}}> <img style={{width: '50px', height: '50px'}}src={require('../images/arrowLeft.png')} alt="Back"/> </ButtonBack>
       
       <Slider>
       <Slide index={0}><Projects /></Slide>
