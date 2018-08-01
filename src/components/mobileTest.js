@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import Fill from '../images/contact.jpg'
 
-
-
-
-class Contact extends Component {
+class Mobile extends Component {
   render() {
     return (
     <div style={styles.wrapper}>
@@ -13,7 +10,6 @@ class Contact extends Component {
 
       <div style={styles.info}>
 
-      <h1 style={styles.header}> CONTACT </h1>
 
       <a href="https://www.linkedin.com/in/cliff-pham-63467473">
       <img 
@@ -41,7 +37,7 @@ class Contact extends Component {
  
       </div>
 
-      <div style={{backgroundImage: `url(${Fill})`, width: 500, height: 700, backgroundPosition: 'center'}}>
+      <div style={{backgroundImage: `url(${Fill})`, width: 650, height: 700, backgroundPosition: 'center'}}>
       </div>
 
     </div>
@@ -52,26 +48,26 @@ class Contact extends Component {
   }
 }
 
-export default Contact
+export default Mobile
 
 const styles = {
   wrapper: {
-    height: 700, 
-    width: 700, 
-    position: "fixed", 
-    top: "7.5%", 
-    left: "25%"
+    height: '100%', 
+    width: '100%', 
+    position: "fixed",
+    left: '0', 
+    top: "6.5%", 
   },
   main: {
     margin: 'auto', 
     display: 'flex', 
     flexDirection: "row", 
-    height: 700
+    height: '100%'
 
   },
   info: {
     backgroundColor: '#FF4E20', 
-    width: 250, 
+    width: 200, 
     height: 700, 
     flexDirection:"column"
 
@@ -79,11 +75,10 @@ const styles = {
   header: {
     color: 'white', 
     fontFamily: 'Overpass Mono, monospace',
-    fontSize: 50, 
+    fontSize: 30, 
     letterSpacing:'-3px', 
     textAlign: 'right', 
-    paddingTop: 10, 
-    paddingRight: 20, 
+    padding: 10,
     margin: 0
 
   },
@@ -91,7 +86,8 @@ const styles = {
     width:75, 
     height: 75, 
     marginTop: 75, 
-    marginLeft: 75
+    marginLeft: 15,
+    marginRight: 15
   },
 
 }

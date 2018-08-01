@@ -4,11 +4,14 @@ import {
   HashRouter as Router,
   Link
 } from "react-router-dom";
-import { slide as Menu } from 'react-burger-menu'
-import Profile from './components/Profile'
+import { slide as Menu } from 'react-burger-menu';
+import Profile from './components/Profile';
+import ProfileMobile from './components/ProfileMobile';
+import Projects from './components/Projects';
 import ProjectCarousel from './components/ProjectCarousel';
-import Contact from './components/Contact'
-import Logo from '../src/images/mylogo.png';
+import ProjectsMobile from './components/ProjectsMobile';
+import Contact from './components/Contact';
+import Mobile from './components/mobileTest';
 import DesktopBreakpoint from './components/responsive_utilities/breakpoint';
 import PhoneBreakpoint from './components/responsive_utilities/phone_breakpoint';
 
@@ -25,6 +28,19 @@ const routes = [
   {
     path: "/Contact",
     main: () => <Contact />
+  },
+  {
+    path: "/m",
+    exact: true,
+    main: () => <ProfileMobile />
+  },
+  {
+    path: "/m/Projects",
+    main: () => <ProjectsMobile />
+  },
+  {
+    path: "/m/Contact",
+    main: () => <Mobile />
   }
 ];
 
@@ -94,12 +110,11 @@ closeMenu () {
               key={index}
               path={route.path}
               exact={route.exact}
-              component={route.sidebar}
             />
           ))}
         </div>
   
-        <div style={{ flex: 1, padding: "10px" }}>
+        <div style={{ flex: 1, padding: "5px" }}>
           {routes.map((route, index) => (
             // Render more <Route>s with the same paths as
             // above, but different components this time.
@@ -122,11 +137,65 @@ closeMenu () {
 
 
       <PhoneBreakpoint>
-      <div className="App" style={{display: 'flex', justifyContent: 'center', minHeight: 700}}>
-      <div style={{backgroundImage: `url(${Logo})`, backgroundSize: '400px 400px', backgroundRepeat: 'no-repeat', paddingTop: 300}}>
-      <h1 style={{textAlign: 'center', fontFamily: 'Ayuthaya',fontSize: 35}}> Mobile Version Coming Soon </h1>
-      </div>
-      </div>
+
+      <Router>
+      
+
+      <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+      <ul style={{ display: 'inline', listStyleType: "none", padding: 0 }}>
+      <li style={{ display: 'inline-block', paddingRight: 40}}>
+        <Link to="/m" style={{textDecoration:'none', color: 'black'}}>HOME</Link>
+      </li>
+      <li style={{ display: 'inline-block', paddingRight: 40}}>
+        <Link to="/m/Projects" style={{textDecoration:'none', color: 'black'}}> PROJECTS</Link>
+      </li>
+      <li style={{ display: 'inline-block', paddingRight: 40}}>
+        <Link to="/m/Contact" style={{textDecoration:'none', color: 'black'}}> CONTACT</Link>
+      </li>
+      </ul>
+
+      {routes.map((route, index) => (
+        // You can render a <Route> in as many places
+        // as you want in your app. It will render along
+        // with any other <Route>s that also match the URL.
+        // So, a sidebar or breadcrumbs or anything else
+        // that requires you to render multiple things
+        // in multiple places at the same URL is nothing
+        // more than multiple <Route>s.
+        <Route
+          key={index}
+          path={route.path}
+          exact={route.exact}
+        />
+      ))}
+
+      <div>
+      {routes.map((route, index) => (
+        // Render more <Route>s with the same paths as
+        // above, but different components this time.
+        <Route
+          key={index}
+          path={route.path}
+          exact={route.exact}
+          component={route.main}
+        />
+      ))}
+    </div>
+
+
+    </div>
+
+      
+
+      
+
+    
+      
+
+      </Router>
+
+    
+      
       </PhoneBreakpoint>
     </div>
 
@@ -218,3 +287,12 @@ var styles = {
 //   </div>
 // </div>
 // </HashRouter>
+
+
+
+/////////////
+// <div className="App" style={{display: 'flex', justifyContent: 'center', minHeight: 700}}>
+// <div style={{backgroundImage: `url(${Logo})`, backgroundSize: '400px 400px', backgroundRepeat: 'no-repeat', paddingTop: 300}}>
+// <h1 style={{textAlign: 'center', fontFamily: 'Ayuthaya',fontSize: 35}}> Mobile Version Coming Soon </h1>
+// </div>
+// </div>
